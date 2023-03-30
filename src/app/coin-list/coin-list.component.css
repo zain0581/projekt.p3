@@ -1,0 +1,105 @@
+.headder{
+ 
+   display: flex;
+   /* text-align: center; */
+   flex-direction: column;
+   /* justify-content: center; */
+   color: rgb(255, 255, 255);   
+   
+}
+h2{
+    font-weight: bold;
+    margin-top: 150px;
+    margin-bottom: 50px;
+    font-size: 3rem;
+    letter-spacing: -0.0083em;
+}
+
+h6{
+   
+    margin-top: 10px;
+    text-transform: capitalize;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.57;
+    letter-spacing: -0.00714em ;
+
+}
+.btn{
+    margin-top: 40px;
+}
+.banner{
+    background-image: url('../../assets/wp4678541.webp');
+    height: 100vh;
+background-size: cover;
+    width: 100%;
+    background-repeat: no-repeat;
+
+     /* margin-top: -9px;  */
+    
+    
+}
+.sub-header{
+      /* margin-top: 100px;  */
+    height: 50%;
+    display: flex;
+    align-items: center;
+    
+}
+.card{
+    border: 0;
+    background: transparent;
+    padding: 10px;
+    margin: 100px;
+    width:  100px;
+    height: 200px;
+}
+
+img{
+    width: 100px;
+    margin:  10px;
+    padding-right: 20px;
+    
+}
+
+h5{
+    font-size: 70%;
+    font-style: italic;
+    font-weight: 800;
+    color: rgb(238, 238, 238);
+
+}
+p{
+    font-weight: 600;
+    color: rgb(236, 236, 236);
+}
+
+
+/* @media only screen and (max-width: 600px) {
+} */
+
+/* .table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+   
+    padding: 10px;
+    text-align: left;
+  }
+  .btn{
+      margin-right: 20%;
+  }
+  .table{
+      background-color: rgb(231, 228, 228);
+  } */
+ 
+  

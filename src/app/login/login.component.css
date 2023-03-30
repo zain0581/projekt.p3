@@ -1,0 +1,211 @@
+/* .outer{
+    height: 100vh;
+    background: linear-gradient(to top,#c9c9e7 50%, #6e6ed5 90%) no-repeat ;
+}
+
+
+.pannel-heading{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#forget{
+    min-width: 100px;
+    margin-left: auto;
+    text-decoration: none;
+    cursor: pointer;
+    
+
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+
+.form-inline label{
+    padding-left: 10px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.btn{
+    margin-top: 20px;
+    border-radius: 15px;
+    align-items: center;
+}
+.pannel{
+    min-height: 380px;
+    box-shadow: 20px 20px 80px rgb(218,218,218);
+    border-radius: 12px;
+    margin-top: 100px;
+}
+.input-field{
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    color: #6e6ed5;
+}
+
+.input-field.error{
+    border: 1px solid red;
+    color: red;
+
+}
+
+input[type='text'],
+input[type='password']{
+
+    border: none;
+    outline: none;
+    box-shadow:none;
+    width: 100%;
+}
+
+.fa-eye-slash.btn{
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+
+img{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative;
+}
+
+
+.bordert{
+   border-top: 1px solid black; 
+   position: relative;
+}
+
+.bordert:after{
+    content: "Other Opstions";
+    position: absolute;
+    top: -9px;
+    left: 38%;
+    background-color: #d6dacb;
+    padding: 0 10px;
+} */
+
+@media (min-width: 500px) {
+.outer{
+    height: 100vh;
+    background: linear-gradient(to top,#ce5120 5%, #6e6ed5 90%) no-repeat ;
+   
+    
+}
+
+
+.pannel-heading {
+    text-align: center;
+    margin-bottom: 1%;
+}
+
+#forget{
+    min-width: 100px;
+    margin-left: auto;
+    text-decoration: none;
+    cursor: pointer;
+    
+
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+
+.form-inline label{
+    padding-left: 50px;
+    margin: 0;
+    cursor: pointer;
+} 
+
+.btn{
+    
+    border-radius: 50px;
+    align-items: center;
+    margin: 10px 180px 20px 156px;
+    width: 40%;
+    padding: 10px;
+    
+}
+.pannel{
+    width: 520px;
+    height: 440px;
+     box-shadow: 20px 20px 9px  rgb(218,218,218); 
+    border-radius: 90px;
+    margin-top: 150px;      
+     background-color: rgb(228, 139, 139) 
+     /* background: transparent;  */
+
+}
+.input-field{
+    border-radius: 50px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 8px solid rgb(202, 142, 118);
+    color: rgb(61, 13, 110);
+    background-color: lightgray
+}
+
+.input-field.error{
+    border: 2px solid red;
+    color: red;
+
+}
+
+input[type='text'],
+input[type='password']{
+
+    border: none;
+    outline: none;
+    box-shadow:none;
+    width: 100%;
+    background-color: lightgrey
+}
+
+.fa-eye-slash.btn{
+    border: none;
+    outline: none;
+    box-shadow: none;
+
+  
+}
+}
+
+
+/* 
+img{
+    width: 40px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 500%;
+    position: relative;
+} 
+
+
+ .bordert{
+   border-top: 1px solid black; 
+   position: relative;
+}  
+
+  .bordert:after{
+    content: "Other Opstions";
+    position: absolute;
+    top: -9px;
+    left: 38%;
+    background-color: #d6dacb;
+    padding: 0 10px;
+}  */
+

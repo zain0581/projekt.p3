@@ -1,0 +1,96 @@
+<div class="banner">
+    <div class="container">
+        <div class="headder" >
+            <h2> Buy & sell Crypto</h2>
+            <h6> join the crypto platform  </h6>
+          <div> <button class="btn btn-success fw-bold " [routerLink]="['/signup']"  > Rigister Now </button>  </div>
+        </div>
+        <div class="sub-header"> 
+             <!-- this is the marque that is running in the middel of our page with the different cions  -->
+<marquee behavior="scroll" onmouseover="stop()" onmouseout="start()" loop="infinite" direction="left" >
+    <div class="row">
+
+         <ng-container *ngFor="let row of bannerData">
+             <div class="col-1">
+
+                <div class="card">
+
+                    <img [src]="row.image" width="100" class="img-fluid" alt="" >
+                    <div class="card-body">
+                        <h5 class="card-title">{{row.symbol | uppercase}} <span class="text-danger">{{row.market_cap_change_percentage_24h}}%</span></h5>
+                        <p class="card-text">{{row.current_price}} USD</p>
+                       
+                    </div>
+
+                </div>
+
+             </div>
+
+         </ng-container>
+    
+    </div>
+
+</marquee>
+        </div>
+
+    </div>
+</div>
+
+  <!-- <div class="container mt-3"> 
+
+    
+      <h1 id="tableLabel">Coin List</h1>
+
+      <p>Fetching data from the server.</p>
+      
+      
+      
+      <table class='table table-striped' aria-labelledby="tableLabel" >
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Symbol</th>
+            <th>MarketCap</th>
+            <th>Volume24h</th>
+            <th>Change24h</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let coin of coins ">
+
+            <td>{{ coin.name }}</td>
+          <td>{{ coin.symbol }}</td>
+          <td>{{ coin.marketCap }}</td>
+          <td>{{ coin.volume24h }}</td>
+          <td>{{ coin.change24h }}</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      </div>   -->
+      
+<!-- </div>  -->
+
+
+<!-- <h1 id="tableLabel">Coin List</h1>
+
+<table class="table table-striped" aria-labelledby="tableLabel">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Symbol</th>
+      <th>MarketCap</th>
+      <th>Volume24h</th>
+      <th>Change24h</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let coinItem of coin">
+      <td>{{ coinItem.Name }}</td>
+      <td>{{ coinItem.Symbol }}</td>
+      <td>{{ coinItem.MarketCap }}</td>
+      <td>{{ coinItem.Volume24h }}</td>
+      <td>{{ coinItem.Change24h }}</td>
+    </tr>
+  </tbody>
+</table> -->

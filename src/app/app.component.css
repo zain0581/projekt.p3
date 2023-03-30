@@ -1,0 +1,91 @@
+/* 
+ @media screen and (min-width: 576px),
+  Media query for mobile devices 
+  screen and (max-width: 767px) ,
+ screen and (min-width: 992px),
+ screen and (min-width: 1200px) { */
+
+/*   
+.example-spacer {
+    flex: 1 1 auto;
+  }
+ 
+  .header{
+    margin-left: -80px;
+    text-shadow: 2px 2px 5px white;
+     text-indent: 60px;
+     color: yellowgreen;
+     cursor: pointer;
+  }
+  
+  .btn{
+    margin-right: 30px;
+margin-left: 30px;
+  
+  }
+  h6{
+    margin-left: 13px;
+    font-size: larger;
+    margin-bottom: 2px;
+    text-decoration-line: underline;
+    cursor: pointer;
+    
+    
+  } */
+
+
+ /* } */
+
+
+ a.navbar-brand {
+
+  text-align: center;
+
+  font-weight: 600;
+  text-shadow: yellowgreen;
+
+}
+
+html {
+  font-size: 14px;
+
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+
+  /* .btn{
+    margin-right: -300px;
+  } */
+}
+.imgg{
+  height: 60px;
+ margin-left: 50px;
+
+  /* align-items: center;
+  align-content :center; */
+
+}
+.nav-item{
+  font-weight: 700;
+  font-size: 17px;
+ margin-right: 50px;
+ padding: 4px;
+}
+/* header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+footer {
+ 
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+} */
+
+

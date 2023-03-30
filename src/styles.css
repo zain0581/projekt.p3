@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+html{
+   /* overflow: hidden; */
+
+    overflow: auto;
+}
+::-webkit-scrollbar{
+  width:1px; /* remove scrollbar space  */
+}
+/* body {
+     overflow: block; 
+     
+  } */
