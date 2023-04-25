@@ -21,6 +21,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { NgToastModule } from 'ng-angular-popup';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { CryptocurrencyComponent } from './cryptocurrency/cryptocurrency.component';
+// import { SidenavComponent } from './sidenav/sidenav.component';
 
 
 
@@ -34,7 +36,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     LoginComponent,
     SignupComponent,
     DashboardComponent,
-  NotFoundComponent
+  NotFoundComponent,
+  CryptocurrencyComponent,
+ 
   ],
   imports: [
     BrowserModule,

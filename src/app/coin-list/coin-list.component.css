@@ -1,18 +1,74 @@
 .headder{
  
-   display: flex;
-   /* text-align: center; */
    flex-direction: column;
-   /* justify-content: center; */
+   justify-content: center;
    color: rgb(255, 255, 255);   
-   
+   width: 100%;
+   height: 10%;
+   /* z-index: -2.5; */
+   filter: blur(0.005px);
+
 }
+
+.video-container {
+    width: 130vw;
+    height: 40vh;
+    overflow: hidden;
+    /* position: center; */
+  }
+  
+  video {
+    position: absolute;
+
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+    /* background-size: cover; */
+    /* -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background:center; */
+  }
+  
+  .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: rgb(55, 46, 46);
+  }
+  
+  p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .btn {
+    font-size: 0.8rem;
+    /* padding: 1rem 2rem; */
+    border-radius: 2px;
+    /* background-color: #ff7300;  */
+    /* color: #fff; */
+    border: none;
+    cursor: pointer;
+      
+  }
+
 h2{
     font-weight: bold;
     margin-top: 150px;
     margin-bottom: 50px;
     font-size: 3rem;
     letter-spacing: -0.0083em;
+   
 }
 
 h6{
@@ -20,20 +76,22 @@ h6{
     margin-top: 10px;
     text-transform: capitalize;
     font-size: 1.4rem;
-    font-weight: 500;
-    line-height: 1.57;
+    font-weight:italic ;
+    line-height: 0.3;
     letter-spacing: -0.00714em ;
 
 }
-.btn{
-    margin-top: 40px;
-}
+
 .banner{
-    background-image: url('../../assets/wp4678541.webp');
+    /* background-image: url('../../assets/wp4678541.webp'); */
+    background-image: url('../../assets/bitcoin.jpg');
+    /* background-image: url(); */
     height: 100vh;
-background-size: cover;
+    background-size: cover;
     width: 100%;
     background-repeat: no-repeat;
+
+    
 
      /* margin-top: -9px;  */
     
@@ -75,31 +133,3 @@ p{
 }
 
 
-/* @media only screen and (max-width: 600px) {
-} */
-
-/* .table-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 20vh;
-  }
-  
-  table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  th, td {
-   
-    padding: 10px;
-    text-align: left;
-  }
-  .btn{
-      margin-right: 20%;
-  }
-  .table{
-      background-color: rgb(231, 228, 228);
-  } */
- 
-  
