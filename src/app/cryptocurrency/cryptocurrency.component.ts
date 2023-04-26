@@ -12,6 +12,7 @@ import { IfStmt } from '@angular/compiler';
   styleUrls: ['./cryptocurrency.component.css']
 })
 export class CryptocurrencyComponent implements OnInit {
+  
    displayedColumns: string[]=['symbol','current_price','price_change_percentage_24h','market_cap']
    dataSource! :  MatTableDataSource <any>;
    @ViewChild(MatPaginator) paginator!:MatPaginator;

@@ -1,9 +1,11 @@
 // import { Component } from '@angular/core';
 
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
+import { CommonModule } from '@angular/common';
+import {AfterViewInit, Component, NgModule, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import { CryptocurrencyComponent } from '../cryptocurrency/cryptocurrency.component';
 import { ApiService } from '../services/api.service';
 
 @Component({
@@ -11,6 +13,14 @@ import { ApiService } from '../services/api.service';
   templateUrl: './coin-list.component.html',
   styleUrls: ['./coin-list.component.css']
 })
+// @NgModule({
+//   declarations:[CryptocurrencyComponent],
+//   imports :[
+//     CommonModule
+//   ],
+//   exports:[CryptocurrencyComponent]
+// })
+
 export class CoinListComponent {
 
 bannerData:any = [];

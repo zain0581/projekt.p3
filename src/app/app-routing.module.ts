@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthGuard } from './guards/auth.guard';
 import { SignupComponent } from './signup/signup.component';
+import { AddCoinComponent } from './add-coin/add-coin.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'coin-list',pathMatch:'full'},
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
   {path:'dashboard',component:DashboardComponent, canActivate:[AuthGuard] },
-  {path :'**',component:NotFoundComponent}
+  {path :'**',component:NotFoundComponent},
+  {path:'coin/add',component:AddCoinComponent}
 ];
 
 @NgModule({

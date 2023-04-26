@@ -1,6 +1,6 @@
 
 
-<div class="container-fluid">
+<!-- <div class="container-fluid">
   <div class="row">
     <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-body-tertiary sidebar collapse">
       <div class="position-sticky pt-3 sidebar-sticky">
@@ -47,13 +47,16 @@
         </nav>
         </div>
         </div>
-        
+         -->
  <div class="container mt-0"> 
 
      
     <h1 id="tableLabel">Coin List</h1>
-
+    
     <p>Fetching data from the server.</p>
+    <button class="nav-link active" aria-current="page" routerLink="coin/add ">Create </button>
+
+    <!-- <button (click)="onCreate()">Create</button> -->
     
     
     
@@ -69,6 +72,15 @@
       </thead>
       <tbody>
         <tr *ngFor="let coin of coins ">
+          <!-- Create button -->
+
+          
+<!-- Edit button -->
+<!-- <button (click)="onEdit(coin.id)">Edit</button> -->
+
+<!-- Delete button -->
+<!-- <button (click)="onDelete(coin.id)">Delete</button>
+ -->
 
           <td>{{ coin.name }}</td>
         <td>{{ coin.symbol }}</td>

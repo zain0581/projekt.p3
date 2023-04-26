@@ -22,6 +22,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { NgToastModule } from 'ng-angular-popup';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CryptocurrencyComponent } from './cryptocurrency/cryptocurrency.component';
+import { AddCoinComponent } from './add-coin/add-coin.component';
 // import { SidenavComponent } from './sidenav/sidenav.component';
 
 
@@ -38,6 +39,7 @@ import { CryptocurrencyComponent } from './cryptocurrency/cryptocurrency.compone
     DashboardComponent,
   NotFoundComponent,
   CryptocurrencyComponent,
+  AddCoinComponent,
  
   ],
   imports: [
