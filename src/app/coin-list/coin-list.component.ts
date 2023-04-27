@@ -13,13 +13,7 @@ import { ApiService } from '../services/api.service';
   templateUrl: './coin-list.component.html',
   styleUrls: ['./coin-list.component.css']
 })
-// @NgModule({
-//   declarations:[CryptocurrencyComponent],
-//   imports :[
-//     CommonModule
-//   ],
-//   exports:[CryptocurrencyComponent]
-// })
+
 
 export class CoinListComponent {
 
