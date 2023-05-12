@@ -1,7 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
+import { AddCoinComponent } from '../add-coin/add-coin.component';
 import { ApiService } from '../services/api.service';
+import { MatDialog } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-coin-detail',
@@ -9,13 +14,25 @@ import { ApiService } from '../services/api.service';
   styleUrls: ['./coin-detail.component.css']
 })
 export class CoinDetailComponent  {
-  constructor( private api :ApiService, private toast : NgToastService, private router : Router)   { 
+  coins:Coin[]=[];
+  
+  constructor( private api :ApiService, private toast : NgToastService, private router : Router ,private _dialog:MatDialog)   { 
   }
-  coins :any =[];
+  openAddEditcoinForm(){
+      const dialogRef=this._dialog.open(AddCoinComponent);
+      dialogRef.afterClosed().subscribe({
+        next:(val)=>{
+          if(val) {
+            this.getalldata();
+          }
+        }
+      })
+  }
+  
   ngOnInit():void{
     // calling the uder methods to see  Arrays with data in aplictaion inspect 
     if (sessionStorage.getItem('Email')) {
-   
+      
 
       } else {
 
@@ -35,11 +52,37 @@ export class CoinDetailComponent  {
          // assigning the fetched data to the coins array
       });
   }
-  }
-  
+  deleteCoin(id: number) {
+    this.api.deleteCoin(id).subscribe({
+      next: res => {
+        alert('Coin deleted');
+        // Reload the list of coins
+        this.getalldata();
+      },
+      error: err => {
+        console.log(err);
+        alert('Error deleting coin'+err.message);
+      }
+    });
 
+   }
+   openEditCoinForm(coin:Coin)
+   {
+     const dialogRef=this._dialog.open(AddCoinComponent,{data:{coin}});
+   
+    dialogRef.afterClosed().subscribe({
+      next:(val)=>{
+        if(val){
+          this.getalldata();
+        }
+      }
+    });
+   }
+  
+  }
 
 interface Coin {
+  id:number;
   name: string;
   symbol: string;
   marketCap: number;

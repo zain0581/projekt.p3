@@ -42,7 +42,27 @@ export class ApiService {
 return this.http.get<any>(`https://localhost:7125/api/Coin`);
 
    }
-
+  //Crud operations private api link 
+   addCoin(data:any):Observable<any>{
+     //this is return observable 
+     return this.http.post('https://localhost:7125/api/Coin',data)
+   }
+   deleteCoin(id:number):Observable<any>
+   {
+      return this.http.delete('https://localhost:7125/api/Coin/${id}')
+   }
+  
+  //  openEditCoinForm(id:number):Observable<any>
+  //  {
+  //    return this.http('https://localhost:7125/api/Coin/${id}')
+  //  }
+  getGraphicalCureencyData(coinId:string,currency:string,days:string){
+    return this.http.get<any>(`htttps://api.coingecko.com/api/v3/coins/${coinId}/market_chartvs_currency=${currency}&days=${days}`)
+  }
+  getCurrencyById(coinId:String)
+  {
+    return this.http.get<any>(`https://api.coingecko.com/api/v3/coins/${coinId}`)
+  }
   
 }
 

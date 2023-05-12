@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+// these all user components 
 import { CoinDetailComponent } from './coin-detail/coin-detail.component';
 import { CoinListComponent } from './coin-list/coin-list.component';
 import { DashboardComponent } from './UserComponent/dashboard/dashboard.component';
@@ -9,6 +10,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthGuard } from './guards/auth.guard';
 import { SignupComponent } from './signup/signup.component';
 import { AddCoinComponent } from './add-coin/add-coin.component';
+import { CryptoCurrencyComponent } from './crypto-currency/crypto-currency.component';
+import { IntegrationComponent } from './integration/integration.component';
+import { ReportsComponent } from './reports/reports.component';
+
 
 const routes: Routes = [
   {path:'',redirectTo:'coin-list',pathMatch:'full'},
@@ -17,12 +22,18 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
   {path:'dashboard',component:DashboardComponent, canActivate:[AuthGuard] },
+  {path:'coin/add',component:AddCoinComponent},
+  {path:'crypto-currency',component:CryptoCurrencyComponent},
+  {path:'Integration',component:IntegrationComponent},
+  {path:'Reports',component:ReportsComponent},
   {path :'**',component:NotFoundComponent},
-  {path:'coin/add',component:AddCoinComponent}
+ 
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+  // static efac=function AppRoutingModule_Factory(t) { return new( t ||AppRoutingModule)();};
+ }
