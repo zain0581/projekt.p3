@@ -1,7 +1,8 @@
 
- 
+<!--  
   <header>
     
+   
    
     </header> 
    
@@ -9,17 +10,120 @@
  
   <router-outlet></router-outlet>
  
-</body>
-  <footer class="footer  text-center text-white p-3">
-    <div class="container">
-      <p>&copy; 2023 My Website. All Rights Reserved.</p>
-      <ul class="list-inline">
-        <li class="list-inline-item"><a class="text-white" href="#">Privacy Policy</a></li>
-        <li class="list-inline-item"><a class="text-white" href="#">Terms of Use</a></li>
-        <li class="list-inline-item"><a class="text-white" href="#">About Us</a></li>
-      </ul>
-    </div>
-  </footer> 
+</body>-->
+ <lib-ng-toast></lib-ng-toast> 
+  <mat-sidenav-container fullscreen>
+
+    <mat-sidenav #sidenav>
+
+        <mat-nav-list (click)="sidenav.close()">
+
+            <a mat-list-item routerLink="/">
+                <mat-icon>library_books</mat-icon>
+                <span>Courses</span>
+            </a>
+
+            <a mat-list-item routerLink="about">
+                <mat-icon>question_answer</mat-icon>
+                <span>About</span>
+            </a>
+
+            <a mat-list-item routerLink="drag-drop-example">
+                <mat-icon>drag_indicator</mat-icon>
+                <span>Drag and Drop</span>
+            </a>
+
+            <a mat-list-item routerLink="tree-demo">
+                <mat-icon>park</mat-icon>
+                <span>Tree Demo</span>
+            </a>
+
+            <a mat-list-item routerLink="virtual-scrolling">
+                <mat-icon>import_export</mat-icon>
+                <span>Virtual Scrolling</span>
+            </a>
+
+            <a mat-list-item >
+                <mat-icon>person_add</mat-icon>
+                <span>Register</span>
+            </a>
+
+            <a  *ngIf= "!getData()" mat-list-item    [routerLinkActive]="['link-active']" [routerLink]="['/login']">
+                <mat-icon>account_circle</mat-icon>
+                <span>Login</span>
+            </a>
+            <a class="nav-link px-3" href="#" (click)="logout()">Sign out</a>
+        </mat-nav-list>
+
+
+    </mat-sidenav>
+
+
+    <mat-toolbar color="primary">
+
+        <button mat-icon-button (click)="sidenav.open()">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <a mat-button [routerLink]="['/coin-list']">
+            <mat-icon fontIcon="home"></mat-icon>
+            Home
+
+
+        </a>
+
+        <a mat-button [routerLink]="['/signup']">
+            <mat-icon>person_add</mat-icon>
+            Register
+        </a>
+
+        <a mat-button [routerLink]="['/login']">
+            <mat-icon>account_circle</mat-icon>
+            Login
+
+
+        </a>
+        
+        <a mat-button [routerLink]="['/dashboard']">
+            <mat-icon>portrait</mat-icon>
+           UserDashboard
+
+
+        </a>
+
+        <a mat-button [matMenuTriggerFor]="dropdown"> Menu 
+         <mat-icon>arrow_drop_down</mat-icon>
+
+        </a>
+
+        <mat-menu #dropdown>
+
+            <button mat-menu-item routerLink="/coin-detail"> Coin Detail </button>
+
+            <button mat-menu-item routerLink="/about">About</button>
+
+        </mat-menu>
+    </mat-toolbar>
+
+
+    <router-outlet></router-outlet>
+
+  
+
+</mat-sidenav-container>
+
+
+<!-- <footer class="footer  text-center text-white p-3">
+  <div class="container">
+    <p>&copy; 2023 My Website. All Rights Reserved.</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a class="text-white" href="#">Privacy Policy</a></li>
+      <li class="list-inline-item"><a class="text-white" href="#">Terms of Use</a></li>
+      <li class="list-inline-item"><a class="text-white" href="#">About Us</a></li>
+    </ul>
+  </div>
+</footer>   -->
+
  
 
 

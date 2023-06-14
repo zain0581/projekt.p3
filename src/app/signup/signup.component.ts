@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
+// import { NgToastService } from 'ng-angular-popup';
 import { ApiService } from '../services/api.service';
 
 
@@ -23,7 +24,7 @@ export class SignupComponent {
   /**
    *
    */
-  constructor(private fb:FormBuilder,private auth: ApiService, private router:Router,private toast: NgToastService ) {}
+  constructor(private fb:FormBuilder,private auth: ApiService, private router:Router, private toast:NgToastService) {}
   ngOnInit():void{
     this.signupform = this.fb.group(
       {
@@ -57,13 +58,13 @@ onSignup(){
     this.auth.signup(this.signupform.value)
     .subscribe({
       next:(res)=>{  
-      this.toast.info({detail:"Success Registered",summary:"You are registered",duration:7000})
+        this.toast.info({detail:"Success Registered",summary:"You are registered",duration:7000})
        this.signupform.reset();
        this.router.navigate(['login']);
   },
       error:(err)=>{   
         alert(err && err.message)
-       this.toast.error({detail:"Error",summary:"You are not registered",duration:5000})
+        this.toast.error({detail:"Error",summary:"You are not registered",duration:5000})
        
   
   }

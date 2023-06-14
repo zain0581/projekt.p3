@@ -49,7 +49,7 @@ return this.http.get<any>(`https://localhost:7125/api/Coin`);
    }
    deleteCoin(id:number):Observable<any>
    {
-      return this.http.delete('https://localhost:7125/api/Coin/${id}')
+      return this.http.delete('https://localhost:7125/api/Coin/'+id)
    }
   
   //  openEditCoinForm(id:number):Observable<any>

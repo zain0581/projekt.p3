@@ -1,0 +1,39 @@
+.btn {
+    margin: 8px;
+}
+.tag{
+    margin-bottom: 10px;
+}
+
+.h1 {
+    margin-top: 50px;
+    font-size: 36px;
+    display: inline-block;
+    color: rgb(75, 157, 224);
+    text-align: center;
+    position: relative;  
+    padding: 10px 20px;
+    background: linear-gradient(45deg, rgb(201, 80, 80), rgb(243, 238, 238));
+    background-size: 100%;
+    animation: lightning 2s linear infinite;
+  
+    opacity: 0.50; /* Adjust the opacity to reduce darkness */
+  }
+  
+  @keyframes lightning {
+    20% {
+      color: #000; /* Start with a dark color */
+      text-shadow:none; /* Remove any existing text shadow */
+    }
+    50% {
+      color: rgb(21, 226, 55); /* Transition to a light color */
+      text-shadow: none; /* Add a text shadow for emphasis */
+    }
+    20% {
+      color: rgb(0, 0, 0); /* Transition back to a dark color */
+      text-shadow: none; /* Remove the text shadow */
+    }
+  }
+
+
+  

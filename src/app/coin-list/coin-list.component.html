@@ -3,118 +3,18 @@
 
 
 <div class="banner">
-  <div class="container-fluid bg-dark ">
+  
     <div class="row " >
-      <nav id="sidebarMenu " >
-        <div class=" pt-2 ml-10 ">
-          
-          <ul class="nav ">
-            <li class="nav-item" >
-              <!-- <a class="nav-link active" aria-current="page" href="#"  [routerLink]="['/dashboard']" > -->
-                <a class="nav-link active" aria-current="page" href="#"  [routerLink]="['/dashboard']" >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home align-text-bottom" aria-hidden="true"></svg>
-                <button mat-button>Dashboard</button>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" [routerLink]="['/coin-detail']">
-                
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file align-text-bottom" aria-hidden="true"><path d="M12 2c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10-4.48-10-10-10zm0 18c-4.41 1.57-3-1h1v1zm1 00-6v-1h1v1h-1z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
-                <!-- <i class="material-icons align-middle">arrow_drop_down</i> -->
-                <button mat-button [matMenuTriggerFor]="currency"> 
-                  <div class="align-center">
-
-                      <span > CrytoCurrency</span>
-                      <i class="material-icons">arrow_drop_down</i>
-                      
-                   </div>
-                </button>
-
-                <!-- CoinDetails  -->
-                
-              </a>
-              <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="nav-link" href="#" [routerLink]="['coin/add']">Coins</a></li>
-                <li><a class="dropdown-item" href="#">Menu Item 2</a></li>
-                <li><a class="dropdown-item" href="#">Menu Item 3</a></li>
-              </ul> -->
-              
-              
-              
-            </li>
-            <mat-menu #currency="matMenu">
-                   
-              <button mat-menu-item >Coins </button>
-              <button mat-menu-item>Wallets </button>
-              <button mat-menu-item>Transactions </button>
-             </mat-menu>
-            <!-- <li class="nav-item">
-              <a class="nav-link " href="#"  [routerLink]="['/crypto-currency']"  routerLinkActive="active"> -->
-                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home align-text-bottom" aria-hidden="true"></svg>  -->
-               
-                <!-- CryptoCurrency -->
-                
-              <!-- </a>
-              
-            </li> -->
-
-             <!-- information about drop down  -->
-             <!---------------------->
-            <!-- <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="material-icons">arrow_drop_down</i>
-                Dropdown Menu
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Menu Item 1</a></li>
-                <li><a class="dropdown-item" href="#">Menu Item 2</a></li>
-                <li><a class="dropdown-item" href="#">Menu Item 3</a></li>
-              </ul>
-            </li> -->
-
-            <!-- <mat-form-field appearance="fill">
-              <mat-label>Select an option</mat-label>
-              <mat-select>
-                <mat-option value="option1">Option 1</mat-option>
-                <mat-option value="option2">Option 2</mat-option>
-                <mat-option value="option3">Option 3</mat-option>
-              </mat-select>
-            </mat-form-field> -->
-            
-            
-            
-            
-          
-            <li class="nav-item">
-              <a class=" nav-link active" aria-current="page" href="#"  [routerLink]="['/login']">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users align-text-bottom" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                <button mat-button>Users</button>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" [routerLink]="['/Reports']">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2 align-text-bottom" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-                <button mat-button>Reports</button>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"  [routerLink]=" ['/Integration']" >
-                
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers align-text-bottom" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-                <button mat-button>Integrations</button>
-              </a>
-            </li>
-          </ul>
-         
-        </div>
-      </nav>
+      
     
   </div>
   
 
 
 
-</div>
+
+
+
     <div class="container ">
 
       
@@ -123,13 +23,13 @@
       <div class="headder " >
                    <div class="video-container">
                      <!-- its related crypto video container  -->
-                      <video autoplay muted loop  >
+                      <!-- <video autoplay muted loop  >
                         <source   src="assets\clown-64093.mp4" type="video/mp4" >
-                       </video>
+                       </video> -->
                         <!-- inside the video message  -->
-                     <div class="text-overlay">
-                       <h1>Welcome to our Crypto Market</h1>
-                         <p>Do you want to play-----?</p>
+                        <div class="text-overlay ">
+                          <h1 class="text">Welcome to our Crypto Market</h1>
+                         
                         <!-- <button>Join the crypto platform</button> -->
                          <!-- //linkup to the account registration -->
                         <div> 

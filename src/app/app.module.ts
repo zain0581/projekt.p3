@@ -18,8 +18,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './UserComponent/dashboard/dashboard.component';
 
-import { NgToastModule } from 'ng-angular-popup';
-import { NotFoundComponent } from './not-found/not-found.component';
+// import { NgToastModule } from 'ng-angular-popup';
+
 
 import { AddCoinComponent } from './add-coin/add-coin.component';
 import {MatDialogModule} from '@angular/material/dialog';
@@ -37,6 +37,16 @@ import { MatInputModule } from '@angular/material/input';
 import { IntegrationComponent } from './integration/integration.component';
 import { CryptoCurrencyComponent } from './crypto-currency/crypto-currency.component';
 import { ReportsComponent } from './reports/reports.component';
+import { TransactionsComponent } from './transactions/transactions.component';
+// import { Toast, ToastrModule, ToastrService } from 'ngx-toastr';
+
+import { NgToastModule, NgToastService } from 'ng-angular-popup';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+
+import { DragDropModule } from '@angular/cdk/drag-drop'; 
+import { NotFoundComponent } from './not-found/not-found.component';
+
 
 
 
@@ -53,13 +63,14 @@ import { ReportsComponent } from './reports/reports.component';
     CoinDetailComponent,
     LoginComponent,
     SignupComponent,
-    DashboardComponent,
-  NotFoundComponent,
-  
+    DashboardComponent,  
   AddCoinComponent,
   IntegrationComponent,
   CryptoCurrencyComponent,
   ReportsComponent,
+  TransactionsComponent,
+  NotFoundComponent,
+  
  
  
   ],
@@ -76,13 +87,23 @@ import { ReportsComponent } from './reports/reports.component';
     ReactiveFormsModule,
     MatTableModule,
     MatPaginatorModule,
-    NgToastModule,
     MatDialogModule,
     MatButtonModule,
     MatIconModule,
     ReactiveFormsModule,
     MatSortModule,
-    MatMenuModule
+    MatMenuModule,
+      // ToastrService,
+    // ToastrModule,
+    MatSidenavModule,
+    MatListModule,
+
+  NgToastModule,
+    DragDropModule,
+   
+   
+   
+    
   
   ],
   providers: [],

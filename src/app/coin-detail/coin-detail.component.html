@@ -2,11 +2,11 @@
  <div class="container mt-0"> 
 
      
-    <h1 id="tableLabel">Coin Details</h1>
+    <h1 class="h1" id="tableLabel">Coin Details</h1>
     
     <p>Fetching data from the server.</p>
     <!-- <button class="nav-link active" aria-current="page" routerLink="coin/add ">Create </button> -->
-    <button mat-raised-button (click)="openAddEditcoinForm()">Add Coins </button>
+    <button class="btn btn-success" (click)="openAddEditcoinForm()">Add Coin </button>
     <!-- <button (click)="onCreate()">Create</button> -->
     
     
@@ -41,9 +41,11 @@
         <td>{{ coin.volume24h }}</td>
         <td>{{ coin.change24h }}</td>
         <td>
-          <button class="btn btn-warning" (click)="openEditCoinForm(coin)">Edit</button>
-          <button class="btn btn-danger" (click)="deleteCoin(coin.id)">Delete</button>
-          <button class="btn btn-success" (click)="deleteCoin(coin.id)">Delete</button>
+         
+          <button class="btn btn-warning" (click)="openEditCoinForm(coin)">Edit Coin</button>
+          <button class="btn btn-danger" (click)="deleteCoin(coin.id)">Delete Coin</button>
+
+          <!-- <button class="btn btn-success" (click)="deleteCoin(coin.id)">Delete</button> -->
         </td>
         </tr>
       </tbody>

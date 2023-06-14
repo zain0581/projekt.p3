@@ -6,13 +6,15 @@ import { CoinListComponent } from './coin-list/coin-list.component';
 import { DashboardComponent } from './UserComponent/dashboard/dashboard.component';
 
 import { LoginComponent } from './login/login.component';
-import { NotFoundComponent } from './not-found/not-found.component';
+
 import { AuthGuard } from './guards/auth.guard';
 import { SignupComponent } from './signup/signup.component';
 import { AddCoinComponent } from './add-coin/add-coin.component';
 import { CryptoCurrencyComponent } from './crypto-currency/crypto-currency.component';
 import { IntegrationComponent } from './integration/integration.component';
 import { ReportsComponent } from './reports/reports.component';
+import { TransactionsComponent } from './transactions/transactions.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 const routes: Routes = [
@@ -26,6 +28,7 @@ const routes: Routes = [
   {path:'crypto-currency',component:CryptoCurrencyComponent},
   {path:'Integration',component:IntegrationComponent},
   {path:'Reports',component:ReportsComponent},
+  {path:'Transactions',component:TransactionsComponent},
   {path :'**',component:NotFoundComponent},
  
 ];

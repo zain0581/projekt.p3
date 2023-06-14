@@ -1,12 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgToastService } from 'ng-angular-popup';
+// import { NgToastService } from 'ng-angular-popup';
 import { AddCoinComponent } from '../add-coin/add-coin.component';
 import { ApiService } from '../services/api.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-coin-detail',
@@ -16,7 +17,7 @@ import { MatSort } from '@angular/material/sort';
 export class CoinDetailComponent  {
   coins:Coin[]=[];
   
-  constructor( private api :ApiService, private toast : NgToastService, private router : Router ,private _dialog:MatDialog)   { 
+  constructor( private api :ApiService, private router : Router ,private _dialog:MatDialog,private toast:NgToastService)   { 
   }
   openAddEditcoinForm(){
       const dialogRef=this._dialog.open(AddCoinComponent);
@@ -36,12 +37,12 @@ export class CoinDetailComponent  {
 
       } else {
 
-        this.toast.error({detail:"error",summary:"Please login First",duration:5000})
+         this.toast.error({detail:"error",summary:"Please login First",duration:5000})
         this.router.navigate(['/login']);
        
       }
     this.getalldata();
-    // this.getalldata();
+    this.getalldata();
       }
 
 
@@ -55,7 +56,7 @@ export class CoinDetailComponent  {
   deleteCoin(id: number) {
     this.api.deleteCoin(id).subscribe({
       next: res => {
-        alert('Coin deleted');
+        this.toast.success({detail:"Success Message",summary:"Cion has been Deleted",duration:5000})
         // Reload the list of coins
         this.getalldata();
       },
@@ -68,7 +69,18 @@ export class CoinDetailComponent  {
    }
    openEditCoinForm(coin:Coin)
    {
-     const dialogRef=this._dialog.open(AddCoinComponent,{data:{coin}});
+     const dialogRef=this._dialog.open(AddCoinComponent,{data:{
+id:coin.id,
+name:coin.name,
+symbol:coin.symbol,
+marketCap:coin.marketCap,
+volume24h:coin.volume24h,
+change24h:coin.change24h
+
+
+
+
+     }});
    
     dialogRef.afterClosed().subscribe({
       next:(val)=>{
