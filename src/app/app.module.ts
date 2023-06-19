@@ -46,6 +46,9 @@ import { MatListModule } from '@angular/material/list';
 
 import { DragDropModule } from '@angular/cdk/drag-drop'; 
 import { NotFoundComponent } from './not-found/not-found.component';
+import { PricesComponent } from './prices/prices.component';
+import { WalletComponent } from './wallet/wallet.component';
+import { AddPriceComponent } from './add-price/add-price.component';
 
 
 
@@ -70,6 +73,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
   ReportsComponent,
   TransactionsComponent,
   NotFoundComponent,
+  PricesComponent,
+  WalletComponent,
+  AddPriceComponent,
   
  
  

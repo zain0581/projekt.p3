@@ -56,3 +56,9 @@ body, mat-sidenav-container, router-outlet {
   background-color: rgb(212, 212, 212);
   color: white;
 }
+
+.sign-out-link {
+  position: absolute;
+  right: 90px; /* Adjust the left positioning as needed */
+  top: 10px; /* Adjust the top positioning as needed */
+}

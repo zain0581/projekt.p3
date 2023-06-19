@@ -1,0 +1,30 @@
+<div class="coin-form-container">
+    <div mat-dialog-title>
+      <h1 class="form-title">Price Form</h1>
+    </div>
+    <form [formGroup]="priceForm" (ngSubmit)="savePrice()" class="custom-form">
+      <div mat-dialog-content class="content">
+        <div class="row">
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Id</mat-label>
+            <input matInput type="hidden" placeholder="Enter Id" formControlName="id" name="id" aria-label="Id">
+          </mat-form-field>
+          <mat-form-field appearance="outline" [class.error]="priceForm.controls['coinId'].dirty && priceForm.hasError('required', 'coinId')" class="form-field">
+            <mat-label>Coin Id</mat-label>
+            <input matInput type="text" placeholder="Enter Coin Id" formControlName="coinId" name="coinId" aria-label="Coin Id">
+            <small *ngIf="priceForm.controls['coinId'].dirty && priceForm.hasError('required', 'coinId')" class="text-danger fw-bold">*Coin Id is Required</small>
+          </mat-form-field>
+          <mat-form-field appearance="outline" [class.error]="priceForm.controls['coinValue'].dirty && priceForm.hasError('required', 'coinValue')" class="form-field">
+            <mat-label>Coin Value</mat-label>
+            <input matInput type="text" placeholder="Enter Coin Value" formControlName="coinValue" name="coinValue" aria-label="Coin Value">
+            <small *ngIf="priceForm.controls['coinValue'].dirty && priceForm.hasError('required', 'coinValue')" class="text-danger fw-bold">*Coin Value is Required</small>
+          </mat-form-field>
+        </div>
+      </div>
+      <div mat-dialog-actions class="action">
+        <button mat-raised-button color="warn" type="button" [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="accent" type="submit">Save</button>
+      </div>
+    </form>
+  </div>
+  

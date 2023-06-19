@@ -18,9 +18,9 @@
 
         <mat-nav-list (click)="sidenav.close()">
 
-            <a mat-list-item routerLink="/">
-                <mat-icon>library_books</mat-icon>
-                <span>Courses</span>
+            <a mat-list-item [routerLink]="['/coin-list']">
+                <mat-icon  fontIcon="home"></mat-icon>
+                <span>Home</span>
             </a>
 
             <a mat-list-item routerLink="about">
@@ -28,15 +28,12 @@
                 <span>About</span>
             </a>
 
-            <a mat-list-item routerLink="drag-drop-example">
-                <mat-icon>drag_indicator</mat-icon>
-                <span>Drag and Drop</span>
+            <a mat-list-item routerLink="coin-detail">
+                <mat-icon>monetization_on</mat-icon>
+                <span>cion Detail</span>
             </a>
 
-            <a mat-list-item routerLink="tree-demo">
-                <mat-icon>park</mat-icon>
-                <span>Tree Demo</span>
-            </a>
+          
 
             <a mat-list-item routerLink="virtual-scrolling">
                 <mat-icon>import_export</mat-icon>
@@ -48,11 +45,17 @@
                 <span>Register</span>
             </a>
 
-            <a  *ngIf= "!getData()" mat-list-item    [routerLinkActive]="['link-active']" [routerLink]="['/login']">
+            <a  mat-list-item    [routerLinkActive]="['link-active']" [routerLink]="['/login']">
                 <mat-icon>account_circle</mat-icon>
                 <span>Login</span>
             </a>
-            <a class="nav-link px-3" href="#" (click)="logout()">Sign out</a>
+
+            <a  (click)="logout()" *ngIf= "getData()" mat-list-item >
+                <mat-icon>exit_to_app</mat-icon>
+                Sign out
+            </a>
+           
+           
         </mat-nav-list>
 
 
@@ -72,19 +75,21 @@
 
         </a>
 
-        <a mat-button [routerLink]="['/signup']">
+        <a mat-button *ngIf= "!getData()"[routerLink]="['/signup']">
             <mat-icon>person_add</mat-icon>
             Register
         </a>
 
-        <a mat-button [routerLink]="['/login']">
+      
+
+        <a mat-button   *ngIf="!getData()" [routerLink]="['/login']">
             <mat-icon>account_circle</mat-icon>
             Login
 
 
         </a>
         
-        <a mat-button [routerLink]="['/dashboard']">
+        <a mat-button *ngIf= "getData()" [routerLink]="['/dashboard']">
             <mat-icon>portrait</mat-icon>
            UserDashboard
 
@@ -98,12 +103,19 @@
 
         <mat-menu #dropdown>
 
-            <button mat-menu-item routerLink="/coin-detail"> Coin Detail </button>
-
-            <button mat-menu-item routerLink="/about">About</button>
+            <button mat-menu-item routerLink="/coin-detail"> Coin Detail  <mat-icon>monetization_on</mat-icon>  </button>
+            <button mat-menu-item routerLink="/Transactions">Transactions    <mat-icon>swap_horiz</mat-icon></button>
+            <button mat-menu-item routerLink="/Wallet">Wallet <mat-icon>account_balance_wallet</mat-icon></button>
+            <button mat-menu-item routerLink="/Prices">Prices <mat-icon>attach_money</mat-icon></button>
 
         </mat-menu>
+
+        <a mat-button *ngIf="getData()" (click)="logout()" [routerLink]="['/coin-list']" class="sign-out-link">
+            <mat-icon>exit_to_app</mat-icon>
+            Sign out
+          </a>
     </mat-toolbar>
+   
 
 
     <router-outlet></router-outlet>
