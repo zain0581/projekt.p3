@@ -49,6 +49,11 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { PricesComponent } from './prices/prices.component';
 import { WalletComponent } from './wallet/wallet.component';
 import { AddPriceComponent } from './add-price/add-price.component';
+import { AddTransactionComponent } from './add-transaction/add-transaction.component';
+import { AddWalletComponent } from './add-wallet/add-wallet.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
 
 
 
@@ -76,6 +81,9 @@ import { AddPriceComponent } from './add-price/add-price.component';
   PricesComponent,
   WalletComponent,
   AddPriceComponent,
+  AddTransactionComponent,
+  AddWalletComponent,
+
   
  
  
@@ -106,6 +114,10 @@ import { AddPriceComponent } from './add-price/add-price.component';
 
   NgToastModule,
     DragDropModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule
+
    
    
    

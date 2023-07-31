@@ -1,0 +1,24 @@
+
+
+  <div class="wallet-form-container">
+    <div mat-dialog-title>
+      <h1 class="form-title">Wallet Form</h1>
+    </div>
+    <form [formGroup]="walletForm" (ngSubmit)="saveWallet()" class="custom-form">
+      <div mat-dialog-content class="content">
+        <div class="row">
+    
+            <input matInput type="hidden" placeholder="Enter Id" formControlName="id" name="id" aria-label="id">
+          
+            <input matInput type="text" placeholder="Enter User ID" formControlName="userId" name="userId" aria-label="userId">
+            
+            <input matInput type="text" placeholder="Enter Balance" formControlName="balance" name="balance" aria-label="balance">
+            
+        </div>
+      </div>
+      <div mat-dialog-actions class="action">
+        <button mat-raised-button color="warn" type="button" [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="accent" type="submit">Save</button>
+      </div>
+    </form>
+  </div>

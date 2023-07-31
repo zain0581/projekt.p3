@@ -42,6 +42,16 @@ export class ApiService {
 return this.http.get<any>(`https://localhost:7125/api/Coin`);
 
    }
+   // its related to UserDashbord 
+
+   private apiurl='https://localhost:7125/api/User';
+
+   getuser(userId:number)
+  {
+    return this.http.get<any>(`https://localhost:7125/api/User`)
+  }
+
+
   //Crud operations private api link 
    addCoin(data:any):Observable<any>{
      //this is return observable 
@@ -64,9 +74,9 @@ return this.http.get<any>(`https://localhost:7125/api/Coin`);
     return this.http.get<any>(`https://api.coingecko.com/api/v3/coins/${coinId}`)
   }
   
-///these api is for cionPrice
+///these api is for Price
 
-  private apiUrl = 'http://api.example.com/prices';
+ private apiUrl = 'https://localhost:7125/api/Price';
 
 
   getPrices(): Observable<any[]> {
@@ -74,7 +84,8 @@ return this.http.get<any>(`https://localhost:7125/api/Coin`);
   }
 
   createPrice(price: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, price);
+    return this.http.post('https://localhost:7125/api/Price',price)
+   
   }
 
   updatePrice(id: number, price: any): Observable<any> {
@@ -87,9 +98,92 @@ return this.http.get<any>(`https://localhost:7125/api/Coin`);
     return this.http.delete<any>(url);
   }
 
+  private traapiUrl = 'https://localhost:7125/api/Transaction';
 
 
-  
+  getTransactions(): Observable<any[]> {
+    return this.http.get<any[]>(this.traapiUrl);
+  }
+
+  createTransactions(transaction: any): Observable<any> {
+    return this.http.post('https://localhost:7125/api/Transaction',transaction)
+   
+  }
+
+
+  // deleteTransactions(id:number):Observable<any>
+  //  {
+  //     return this.http.delete('https://localhost:7125/api/Transaction/'+id)
+  //  }
+
+  updateTransaction(id: number, transaction: any): Observable<any> {
+    const url = `${this.traapiUrl}/${id}`;
+    return this.http.put<any>(url, transaction);
+  }
+
+
+  deleteTransactions(id: number): Observable<any> {
+    const url = `${this.traapiUrl}/${id}`;
+    return this.http.delete<any>(url);
+  }
+
+  // deleteTransactions(id:number):Observable<any>
+  //  {
+  //     return this.http.delete('https://localhost:7125/api/Transaction'+id)
+  //  }
+
+   
+ // wallet api 
+  private walletapiUrl = 'https://localhost:7125/api/Wallet';
+
+
+
+  getWallets(): Observable<any[]> {
+    return this.http.get<any[]>(this.walletapiUrl);
+  }
+
+  createWallet(wallet: any): Observable<any> {
+    return this.http.post('https://localhost:7125/api/Wallet',wallet)
+   
+  }
+
+  deleteWallet(id:number):Observable<any>
+   {
+      return this.http.delete('https://localhost:7125/api/Wallet/'+id)
+   }
+
+  // deleteWallet(id: number): Observable<any> {
+  //   const url = `${this.walletapiUrl}/${id}`;
+  //   return this.http.delete<any>(url);
+  // }
+
+  // updateWallet(id: number, wallet: any): Observable<any> {
+  //   const url = `${this.walletapiUrl}/${id}`;
+  //    return this.http.put<any>(url,wallet);
+  //  }
+
+  updateWallet(id: number, wallet: any): Observable<any> {
+    const url = `${this.walletapiUrl}/${id}`;
+    return this.http.put<any>(url, wallet);
+  }
+//  usertransactionapi='https://localhost:7125/api/User/${userId}/transaction/wallet'
+
+//   getuserwithTransactionsandwallets (): Observable<any> {
+//     const url= `$ {this.usertransactionapi}/users?include=transactions.wallets `;
+//     return this.http.get(url);
+    
+    // return this.http.get<any[]>(this.usertransactionapi);
+  // }
+  //   apiUrl1=''
+  // getUserTransactions(userId:number):Observable<UserTransaction[]>{
+  //   const url= `${this.apiUrl1}/${userId}`;
+  // }
+
+  private api = 'https://localhost:7125/api/User';
+  getUsersWithTransactionsAndWallets() {
+    // return this.http.get<any[]>(`${this.apiUrl}/GetUsersWithTransactionsAndWallets`);
+    return this.http.get<any[]>(this.api);
+  }
   
 }
 

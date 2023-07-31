@@ -1,24 +1,75 @@
-<!-- <table>
-    <thead>
+<!-- <div class="container mt-0"> 
+
+     
+  <h1 class="h1" id="tableLabel">Transaction Details</h1>
+   -->
+  <!-- <p>Fetching data from the server.</p> -->
+  <!-- <button class="nav-link active" aria-current="page" routerLink="coin/add ">Create </button> -->
+  <!-- <button class="btn btn-success" (click)="openAddEdittransactionForm()">Add Transaction </button>
+   
+  <table class="table table-striped"  aria-labelledby="tableLabel" *ngIf="transactions" >
+    <thead >
       <tr>
         <th>#</th>
         <th>User ID</th>
         <th>Date</th>
-         Add other table headers as needed
-        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let transaction of transactions">
-        <td>{{ transaction.id }}</td>
+        <td>{{transaction.id }}</td>
         <td>{{ transaction.userId }}</td>
         <td>{{ transaction.date }}</td>
-         Display other transaction properties as needed
         <td>
-          <button >Update</button>
-          <button >Delete</button>
+          <button class="btn btn-warning" (click)="openEditTransactionForm(transaction)">Edit Transaction</button>
+          <button class="btn btn-danger" (click)="deleteTransaction(transaction.id)">Delete</button>
         </td>
       </tr>
     </tbody>
   </table> -->
+
+
+  <div class="container mt-0"> 
+
+     
+    <h1 class="h1" id="tableLabel">Transaction Details</h1>
+    
+    <p>Fetching data from the server.</p>
+   
+    <button class="btn btn-success" (click)="openAddEdittransactionForm()">Add transaction </button>
+    
+    
+    
+    <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="transactions" >
+      <thead class="bg-primary text-white  ">
+        <tr>
+          <th>#</th>
+          <th>userId</th>
+          <th>Date</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transaction of transactions ">
+
+       <td>{{ transaction.id}}</td>
+          <td>{{transaction.userId}}</td>
+        <td>{{ transaction.date}}</td>
+        
+        <td>
+         
+          <button class="btn btn-warning" (click)="openEditTransactionForm(transaction)">Edit transaction</button>
+          <button class="btn btn-danger" (click)="deleteTransaction(transaction.id)">Delete</button>
+
+         
+        </td>
+        </tr>
+      </tbody>
+    </table>
+
+ 
+    </div>   
+     
   
+
+

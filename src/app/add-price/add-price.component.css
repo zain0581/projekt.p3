@@ -1,15 +1,15 @@
 
-   .coin-form-container {
-    background-color: #c6faa4;
+   .price-form-container {
+    background-color: #a4dafa;
     padding: 20px;
     /* height: 600px; */
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
     max-width: 700px;
     margin: 0 auto;
   }
   
-  .form-title {
+  /* .form-title {
     text-align: center;
     margin: 0;
     color: #333;
@@ -17,54 +17,54 @@
     font-size: 50px ;
   }
   
-  
-  .custom-form {
+   */
+  /* .custom-form {
     margin-top: 20px;
-  }
+  } */
   
-  .form-field {
+  /* .form-field {
     width: 100%;
     margin-bottom: 1px;
-  }
+  } */
   
-  .currency-symbol {
+  /* .currency-symbol {
     position: absolute;
     top: 20%;
     transform: translateY(-50%);
     font-weight: bold;
     right: 400px;
     color: black;
-  }
+  } */
  
-  .percentage-symbol {
+  /* .percentage-symbol {
     color: black;
     position: absolute;
     top: 20%;
     transform: translateY(-50%);
     font-weight: bold;
     right: 400px;
-  }
+  } */
   
-  .action {
+  /* .action {
     display: flex;
     justify-content: flex-end;
     margin-top: 20px;
-  }
+  } */
   
   button[type="submit"] {
     margin-left: 10px;
   }
   
-  .row {
+  /* .row {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: -10px;
-  }
+  } */
   
-  .row .mat-form-field {
+  /* .row .mat-form-field {
     flex: 1 0 50%;
     margin-bottom: 10px;
-  }
+  } */
   
   @media (max-width: 600px) {
     .row .mat-form-field {

@@ -1,5 +1,4 @@
-import { Component, Inject } from '@angular/core';
-
+import { Component,Inject } from '@angular/core';
 import { FormBuilder, FormGroup,FormControl, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { NgToastService } from 'ng-angular-popup';
@@ -8,45 +7,47 @@ import { ApiService } from '../services/api.service';
 
 
 @Component({
-  selector: 'app-add-price',
-  templateUrl: './add-price.component.html',
-  styleUrls: ['./add-price.component.css']
+  selector: 'app-add-wallet',
+  templateUrl: './add-wallet.component.html',
+  styleUrls: ['./add-wallet.component.css']
 })
-export class AddPriceComponent {
-  priceForm: FormGroup;
+export class AddWalletComponent {
+
+  walletForm: FormGroup;
 
   constructor(
     
     private _fb: FormBuilder,
     private _apiService: ApiService,
-    private _dialogRef: MatDialogRef<AddPriceComponent>,
+    private _dialogRef: MatDialogRef<AddWalletComponent>,
     private toast: NgToastService,
     @Inject(MAT_DIALOG_DATA) private data: any
   ) {
-    this.priceForm = this._fb.group({
+    this.walletForm = this._fb.group({
       id: [0, Validators.required],
-      coinId: ['', Validators.required],
-      Value: ['', Validators.required]
+      userId: ['', Validators.required],
+      balance: ['', Validators.required]
     });
   }
   ngOnInit():void{
-    this.priceForm.patchValue(this.data);
+    this.walletForm.patchValue(this.data);
   }
 
-  savePrice() {
+  saveWallet() {
 
 
 
-    if(this.priceForm.valid)
+    if(this.walletForm.valid)
       {
       // console.log(this.coinForm.value);
-      this._apiService.createPrice(this.priceForm.value).subscribe({
+      this._apiService. createWallet(this.walletForm.value).subscribe({
         next:(val:any) => {
-          alert('Prices added successfuully');
+          alert('wallet added successfuully');
           this._dialogRef.close(true);
         },
         error:(err:any)=>{
-          console.error(err);
+          console.error('Error creating wallet:',err);
+         
           
         }
         
@@ -57,14 +58,14 @@ export class AddPriceComponent {
           
         //throw the erroe using toaster and with required fields
         //calling the method her::
-         this.validateallformfields(this.priceForm);
+         this.validateallformfields(this.walletForm);
         this.toast.warning({detail:"WARNING",summary:"Miss Something? ",duration:5000})
      
       }
   }
-  private validateallformfields(priceForm: FormGroup<any>) {
-    Object.keys(priceForm.controls).forEach(field=>{
-      const control = priceForm.get(field);
+  private validateallformfields(walletForm: FormGroup<any>) {
+    Object.keys(walletForm.controls).forEach(field=>{
+      const control = walletForm.get(field);
       if(control instanceof FormControl){
         control.markAsDirty({onlySelf:true});
       }
@@ -77,4 +78,3 @@ export class AddPriceComponent {
     }
 
 }
-

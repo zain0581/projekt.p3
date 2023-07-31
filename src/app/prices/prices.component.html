@@ -1,11 +1,64 @@
 <div class="container mt-0"> 
 
      
-    <h1 class="h1" id="tableLabel">Coin Details</h1>
+    <h1 class="h1" id="tableLabel">Price Details</h1>
     
     <p>Fetching data from the server.</p>
     <!-- <button class="nav-link active" aria-current="page" routerLink="coin/add ">Create </button> -->
-    <button class="btn btn-success" (click)="openAddEditcoinForm()">Add Price </button>
+    <button class="btn btn-success" (click)="openAddEditpriceForm()">Add Price </button>
+     
+    <table class="table table-striped"  aria-labelledby="tableLabel" *ngIf="prices" >
+      <thead >
+        <tr>
+          <th>#</th>
+          <th>Coin Id</th>
+          <th>Coin Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let price of prices">
+          <td>{{price.id}}</td>
+          <td>{{price.coinId}}</td>
+          <td>{{price.value }}</td>
+          <td>
+          <button class="btn btn-warning" (click)="openEditPriceForm(price)">Edit Price</button>
+          <!-- <button class="btn btn-warning" (click)="openEditCoinForm(price)">Edit Coin</button> -->
+          
+          <button class="btn btn-danger" (click)="deletePrice(price.id)">Delete price</button>
+        </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+
+    <!-- <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="prices" >
+      <thead class="bg-primary text-white  ">
+        <tr>
+          <th>#</th>
+          <th>CoinId</th>
+          <th>Value</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let price of prices ">
+
+       <td>{{ price.id}}</td>
+          <td>{{ price.coinId }}</td>
+          <td>{{ price.coinValue }}</td>
+        -->
+        <!-- <td> -->
+         
+          <!-- <button class="btn btn-warning" (click)="openEditCoinForm(coin)">Edit Coin</button>
+          <button class="btn btn-danger" (click)="deleteCoin(coin.id)">Delete Coin</button> -->
+
+          <!-- <button class="btn btn-success" (click)="deleteCoin(coin.id)">Delete</button> -->
+        <!-- </td> -->
+        <!-- </tr>
+      </tbody>
+    </table> -->
     
     <!-- <h2>Price List</h2>
     <ul>

@@ -1,1 +1,36 @@
-<p>wallet works!</p>
+<div class="container mt-0"> 
+
+     
+    <h1 class="h1" id="tableLabel">Wallet Details</h1>
+    
+    <p>Fetching data from the server.</p>
+    <!-- <button class="nav-link active" aria-current="page" routerLink="coin/add ">Create </button> -->
+    <button class="btn btn-success" (click)="openAddEditwalletForm()">Add wallet</button>
+     
+    <table class="table table-striped"  aria-labelledby="tableLabel" *ngIf="wallets" >
+      <thead >
+        <tr>
+          <th>#</th>
+          <th>User ID</th>
+          <th>Balance </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let wallet of wallets">
+          <td>{{wallet.id }}</td>
+          <td>{{ wallet.userId }}</td>
+          <td>{{ wallet.balance }}</td>
+
+          
+          <td>
+           <button class="btn btn-warning" (click)="openEditWalletForm(wallet)">Edit Wallet</button> 
+          <button class="btn btn-danger" (click)="deleteWallet(wallet.id)">Delete wallet</button>
+        </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+  
+  
+  
+  

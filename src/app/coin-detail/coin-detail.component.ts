@@ -42,7 +42,7 @@ export class CoinDetailComponent  {
        
       }
     this.getalldata();
-    this.getalldata();
+     this.getalldata();
       }
 
 

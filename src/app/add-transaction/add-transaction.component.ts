@@ -1,48 +1,49 @@
+
 import { Component, Inject } from '@angular/core';
 
 import { FormBuilder, FormGroup,FormControl, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { NgToastService } from 'ng-angular-popup';
 import { ApiService } from '../services/api.service';
-
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @Component({
-  selector: 'app-add-price',
-  templateUrl: './add-price.component.html',
-  styleUrls: ['./add-price.component.css']
+  selector: 'app-add-transaction',
+  templateUrl: './add-transaction.component.html',
+  styleUrls: ['./add-transaction.component.css']
 })
-export class AddPriceComponent {
-  priceForm: FormGroup;
+export class AddTransactionComponent {
+
+  transactionForm: FormGroup;
 
   constructor(
     
     private _fb: FormBuilder,
     private _apiService: ApiService,
-    private _dialogRef: MatDialogRef<AddPriceComponent>,
+    private _dialogRef: MatDialogRef<AddTransactionComponent>,
     private toast: NgToastService,
     @Inject(MAT_DIALOG_DATA) private data: any
   ) {
-    this.priceForm = this._fb.group({
+    this.transactionForm = this._fb.group({
       id: [0, Validators.required],
-      coinId: ['', Validators.required],
-      Value: ['', Validators.required]
+      userId: ['', Validators.required],
+      Date: ['', Validators.required]
     });
   }
   ngOnInit():void{
-    this.priceForm.patchValue(this.data);
+    this.transactionForm.patchValue(this.data);
   }
 
-  savePrice() {
+  saveTransaction() {
 
 
 
-    if(this.priceForm.valid)
+    if(this.transactionForm.valid)
       {
       // console.log(this.coinForm.value);
-      this._apiService.createPrice(this.priceForm.value).subscribe({
+      this._apiService.createTransactions(this.transactionForm.value).subscribe({
         next:(val:any) => {
-          alert('Prices added successfuully');
+          alert('Transactions added successfuully');
           this._dialogRef.close(true);
         },
         error:(err:any)=>{
@@ -57,14 +58,14 @@ export class AddPriceComponent {
           
         //throw the erroe using toaster and with required fields
         //calling the method her::
-         this.validateallformfields(this.priceForm);
+         this.validateallformfields(this.transactionForm);
         this.toast.warning({detail:"WARNING",summary:"Miss Something? ",duration:5000})
      
       }
   }
-  private validateallformfields(priceForm: FormGroup<any>) {
-    Object.keys(priceForm.controls).forEach(field=>{
-      const control = priceForm.get(field);
+  private validateallformfields(transactioForm: FormGroup<any>) {
+    Object.keys(transactioForm.controls).forEach(field=>{
+      const control = transactioForm.get(field);
       if(control instanceof FormControl){
         control.markAsDirty({onlySelf:true});
       }
@@ -77,4 +78,5 @@ export class AddPriceComponent {
     }
 
 }
+
 

@@ -50,39 +50,67 @@ export class SignupComponent {
 
 }
 
-onSignup(){
-  if(this.signupform.valid){
-    //send the obj to database
-     console.log(this.signupform.value);
+// onSignup(){
+//   if(this.signupform.valid){
+//     //send the obj to database
+//      console.log(this.signupform.value);
 
-    this.auth.signup(this.signupform.value)
-    .subscribe({
-      next:(res)=>{  
-        this.toast.info({detail:"Success Registered",summary:"You are registered",duration:7000})
-       this.signupform.reset();
-       this.router.navigate(['login']);
-  },
-      error:(err)=>{   
-        alert(err && err.message)
-        this.toast.error({detail:"Error",summary:"You are not registered",duration:5000})
+//     this.auth.signup(this.signupform.value)
+//     .subscribe({
+//       next:(res)=>{  
+//         this.toast.info({detail:"Success Registered",summary:"You are registered",duration:7000})
+//        this.signupform.reset();
+//        this.router.navigate(['login']);
+//   },
+//       error:(err)=>{   
+//         alert(err && err.message)
+//         this.toast.error({detail:"Error",summary:"You are not registered",duration:5000})
        
   
-  }
-      });
-    // console.log(this.signupform.value)
+//   }
+//       });
+//     // console.log(this.signupform.value)
     
 
+//   }
+//   else{
+    
+//     //throw the erroe using toaster and with required fields
+//    // calling the method her::
+ 
+//     this.validateallformfields(this.signupform);
+//    this.toast.warning({detail:"Warning",summary:"Miss something? ",duration:5000})
+//   }
+
+// }
+onSignup() {
+  if (this.signupform.valid) {
+    this.auth.signup(this.signupform.value)
+      .subscribe(
+        (res) => {
+          this.toast.info({ detail: "Success Registered", summary: "You are registered", duration: 7000 });
+          this.signupform.reset();
+          this.router.navigate(['login']);
+        },
+        (error) => {
+          if (error.status === 400 && error.error && error.error.message === "User with the same name already exists") {
+            alert("User with the same name already exists. Please provide a different name.");
+          } else {
+            alert(" User with the same name already exists  Please try again.");
+          }
+          this.toast.error({ detail: "Error", summary: "You are not registered", duration: 5000 });
+        }
+      );
   }
   else{
-    
-    //throw the erroe using toaster and with required fields
-   // calling the method her::
- 
     this.validateallformfields(this.signupform);
    this.toast.warning({detail:"Warning",summary:"Miss something? ",duration:5000})
-  }
 
+  }
 }
+
+
+
 
 private validateallformfields(formGroup: FormGroup<any>) {
   Object.keys(formGroup.controls).forEach(field=>{
