@@ -1,98 +1,53 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { ApiService } from '../../services/api.service';
+import { ApiService,  } from '../../services/api.service';
 import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
-
-
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent  {
-  users:User[]=[]; //Use definite assignment assertion modifier (!)
-  
-     constructor( private router: Router,http :HttpClient, private api:ApiService,private toast:NgToastService){}
-    
-// Getting data from for login (Session storage)
-  getData() {
-    //return sessionStorage.getItem('firstName');
-    // const Email = sessionStorage.getItem('Email')
-    
-    // this.toster.success({detail:"Login",summary:"good",duration:50000})
-     const firstName =  sessionStorage.getItem('firstName');
-    const lastName = sessionStorage.getItem('lastName');
-    return firstName + '    ' + lastName  ;
-  // return sessionStorage.getItem('Email');
+export class DashboardComponent implements OnInit {
+  users: User[] = []; // Initialize users as an empty array
+  usersObservable: Observable<User[]> | undefined; // Create a separate variable for the observable
 
-  }
-  // ngOnInit() {
-  //   const userId = 1; // Replace with the actual user ID
+  constructor(
+    private router: Router,
+    private api: ApiService,
+    private toast: NgToastService
+  ) {}
 
-  //   this.api.getuser(userId).subscribe(
-  //     (userdata:any) => {
-  //       this.loggedInuser =userdata.user;
-  //       this.transactions = userdata.transactions;
-  //       this.wallet = userdata.wallet;
-       
-  //     },
-  //     (error:any) => {
-  //       console.log('Error:', error);
-  //     }
-  //   );
-  //   this.getalldata();
-  // }
-  // getalldata() {
-  //   this.api.getuserwithTransactionsandwallets().subscribe((data:User[]) => {
-  //     this.loggedInuser = data[0];//Assuming its receviing an array of users and taking the first user 
-  //     // Assigning the fetched data to the coins array
-  //     this.transactions=this.loggedInuser.transactions;
-  //     this.wallet=this.loggedInuser.wallets;
-  //   });
-      
-  // }
-  
-  ngOnInit():void{
-    // calling the uder methods to see  Arrays with data in aplictaion inspect 
+  // Rest of the component code ...
+
+  ngOnInit(): void {
     if (sessionStorage.getItem('Email')) {
       this.getalldata();
-
-      } else {
-
-         this.toast.error({detail:"error",summary:"Please login First",duration:5000})
-        this.router.navigate(['/login']);
-       
-      }
-      }
-
-
-
-  getalldata() {
-   
-    this.api. getUsersWithTransactionsAndWallets()
-    .subscribe((data: User[]) => {
-      this.users = data;
-    },( error:HttpErrorResponse)=>{
-      console.log('Error:',error);
-      //Handle the error and display a message 
-      if(error.status===405)
-      {
-        console.log('HTTP METHOD not found ');
-
-      } else {
-        console.log('An error occured ');
-      }
-      
+    } else {
+      this.toast.error({ detail: 'error', summary: 'Please login First', duration: 5000 });
+      this.router.navigate(['/login']);
     }
-         // assigning the fetched data to the coins array
-      );
-      
   }
 
-
-  
+  getalldata() {
+    this.usersObservable = this.api.getUsersWithTransactionsAndWallets(); // Store the observable
+    this.usersObservable.subscribe(
+      (data: User[]) => {
+        this.users = data; // Assign the data received in the subscription to users
+      },
+      (error: HttpErrorResponse) => {
+        console.log('Error:', error);
+        // Handle the error and display a message
+        if (error.status === 405) {
+          console.log('HTTP METHOD not found ');
+        } else {
+          console.log('An error occurred ');
+        }
+      }
+    );
+  }
 }
 export interface User {
   id: number;

@@ -1,49 +1,4 @@
 
-/* .coin-form-container {
-    
-    background-size: cover;
-    background-position: center;
-    padding: 20px;
-    border-radius: 50px;
-  }
-  
-
-  .content {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-  }
-  
-  .row {
-    display: grid;
-     grid-template-columns: repeat(2, 1fr); 
-    grid-gap: 2px;
-    width: 110%;
-    height: 130%; /* Increased height 
-    background-color: transparent;
-    padding: 3rem;
-    padding-left: 3rem;
-  }
-  
-  .action {
-    display: flex;
-    justify-content: flex-end;
-    padding: 20px;
-  }
-  
-  button {
-      margin-right: 20px;
-    flex:1
-  } */
-
-
-
-
-
-
-   
-
-  
 
    .coin-form-container {
     background-color: #c6faa4;
