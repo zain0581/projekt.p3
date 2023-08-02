@@ -14,6 +14,7 @@ import { TransactionsComponent } from './transactions/transactions.component';
 import { PricesComponent } from './prices/prices.component';
 import { WalletComponent } from './wallet/wallet.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path:'Transactions',component:TransactionsComponent},
   {path:'Prices',component:PricesComponent},
   {path:'Wallet',component:WalletComponent},
+  {path:'about',component:AboutComponent},
   {path :'**',component:NotFoundComponent},
  
 ];

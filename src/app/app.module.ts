@@ -53,6 +53,7 @@ import { AddTransactionComponent } from './add-transaction/add-transaction.compo
 import { AddWalletComponent } from './add-wallet/add-wallet.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -83,6 +84,7 @@ import { MatNativeDateModule } from '@angular/material/core';
   AddPriceComponent,
   AddTransactionComponent,
   AddWalletComponent,
+  AboutComponent,
 
   
  
