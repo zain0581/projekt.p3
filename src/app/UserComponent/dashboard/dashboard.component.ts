@@ -32,9 +32,11 @@ export class DashboardComponent implements OnInit {
   }
 
   getalldata() {
+  
     this.usersObservable = this.api.getUsersWithTransactionsAndWallets(); // Store the observable
     this.usersObservable.subscribe(
       (data: User[]) => {
+        
         this.users = data; // Assign the data received in the subscription to users
       },
       (error: HttpErrorResponse) => {
@@ -54,7 +56,7 @@ export interface User {
   firstName: string;
   lastName: string;
   email: string;
-  transactions: Transaction[];
+  transaction: Transaction[];
   wallets: Wallet[];
 }
 

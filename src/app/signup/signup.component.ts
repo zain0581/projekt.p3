@@ -93,12 +93,26 @@ onSignup() {
           this.router.navigate(['login']);
         },
         (error) => {
-          if (error.status === 400 && error.error && error.error.message === "User with the same name already exists") {
-            alert("User with the same name already exists. Please provide a different name.");
+          if (error.status === 400) {
+            if (error.error && error.error.message === "User with the same email already exists") {
+              alert("User with the same email already exists. Please provide a different email.");
+            } else if (error.error && error.error.message === "User with the same name already exists") {
+              alert("User with the same name already exists. Please provide a different name.");
+            } else if (error.error && error.error.message === "Password does not meet the requirements. It should have at least 5 characters, including uppercase, lowercase, and a digit.") {
+              alert("Password does not meet the requirements. It should have at least 5 characters, including uppercase, lowercase, and a digit.");
+            } else  {
+              alert("Email is not valid  ");
+            }
           } else {
-            alert(" User with the same name already exists  Please try again.");
+            alert("An error occurred. Please try again.");
           }
-          this.toast.error({ detail: "Error", summary: "You are not registered", duration: 5000 });
+
+          // if (error.status === 400 && error.error && error.error.message === "User with the same name already exists") {
+          //   alert("User with the same name already exists. Please provide a different name.");
+          // } else {
+          //   alert(" User with the same name already exists  Please try again.");
+          // }
+          //this.toast.error({ detail: "Error", summary: "You are not registered", duration: 5000 });
         }
       );
   }

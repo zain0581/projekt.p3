@@ -40,13 +40,13 @@
       <td>{{ user.lastName}}</td>
       <td>{{ user.email}}</td>
       <td>
-        <ng-container *ngFor="let transaction of user.transactions">
+        <ng-container *ngFor="let transaction of user.transaction">
           {{ transaction.id}}<br>
         </ng-container>
         
       </td>
       <td>
-        <ng-container *ngFor="let transaction of user.transactions">
+        <ng-container *ngFor="let transaction of user.transaction">
           {{ transaction.date|date:'yyyy-MM-dd HH:mm:ss'}}<br>
         </ng-container>
       </td>
